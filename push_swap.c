@@ -6,7 +6,7 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 18:45:07 by aderugo           #+#    #+#             */
-/*   Updated: 2022/08/02 15:17:08 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/08/11 19:01:22 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,23 +38,15 @@ int	main(int argc, char **argv)
 
 	i = 0;
 	final_argv = NULL;
-	final_argv = get_final_argv(argv);
-	while (final_argv[i])
-		printf("%s", final_argv[i]);
+	final_argv = get_final_argv(argc, argv);
 	size = get_final_size(final_argv);
-	if (argc <= 2)
-	{
-		ft_printf("Error\n");
-		exit(1);
-	}
 	a = NULL;
 	b = NULL;
-	size = argc - 1;
-	check_param(argv);
+	check_param(final_argv);
 	arr = malloc(size * sizeof(int));
 	i = -1;
 	while (++i < size)
-		arr[i] = ft_atoi(argv[i + 1]);
+		arr[i] = ft_atoi(final_argv[i]);
 	i = size - 1;
 	while (i >= 0)
 		push(&a, arr[i--], 0, 0);

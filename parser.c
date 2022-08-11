@@ -6,7 +6,7 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 17:00:16 by aderugo           #+#    #+#             */
-/*   Updated: 2022/08/02 15:58:30 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/08/11 22:25:09 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,43 +25,31 @@ int		get_final_size(char **final_argv)
 }
 
 
-char	**get_final_argv(char **argv)
+char	**get_final_argv(int argc, char **argv)
 {
-	int		i;
-	int		j;
-	int		k;
-	int		n;
-	static char	arr[10000][5];
-	char	**temp;
+	int i;
+	char *str;
+	char **arr;
 
-	j = 0;
-	k = 0;
-	n = 0;
 	i = 1;
-
-	temp = NULL;
-	while (argv[i])
+	str = NULL;
+	arr = NULL;
+	if (argc == 2)
+		arr = ft_split(argv[i], ' ');
+	else 
 	{
-		while (argv[i][j])
+		while (i < argc)
 		{
-			if (argv[i][j] == ' ')
-			{
-				temp = ft_split(argv[i], ' ');
-				while (temp[n])
-				{
-					ft_strlcpy(arr[k], temp[n], ft_strlen(arr[k]));
-					// arr[k] = temp[n];
-					k++;
-					n++;
-				}
-				continue;
-			}
-			j++;
+			str = ft_strjoin_gnl(str, argv[i]);
+			str = ft_strjoin_gnl(str, " ");
+			i++;
 		}
-		ft_strlcpy(arr[k], temp[n], ft_strlen(arr[k]));
-		// arr[k] = argv[i];
-		k++;
-		i++;
+		arr = ft_split(str, ' ');
+	}
+	if (!arr)
+	{
+		perror("mistake");
+		exit(1);
 	}
 	return (arr);
 }

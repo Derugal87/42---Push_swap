@@ -6,7 +6,7 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 14:55:44 by aderugo           #+#    #+#             */
-/*   Updated: 2022/08/02 15:52:25 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/08/11 17:15:08 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void		check_param(char **argv);
 void		sort_int_arr(int *tab, int size);
 void		check_dubl(int *arr, int argc);
 void		set_pos(t_node **head, int *arr, int size);
-char		**get_final_argv(char **argv);
+char		**get_final_argv(int argc, char **argv);
 int			get_final_size(char **final_argv);
 
 //list_utils
