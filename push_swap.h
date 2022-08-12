@@ -6,7 +6,7 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 14:55:44 by aderugo           #+#    #+#             */
-/*   Updated: 2022/08/11 17:15:08 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/08/12 18:42:43 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,11 @@ typedef struct s_node {
 	struct s_node	*next;
 }	t_node;
 
+typedef struct s_move {
+	int	step;
+	int route;
+}	t_move;
+
 //Functions
 void		check_param(char **argv);
 void		sort_int_arr(int *tab, int size);
@@ -40,6 +45,8 @@ t_node		*ft_lstprelast_ps(t_node *lst);
 int			ft_lstsize_ps(t_node **head);
 void		push(t_node **head, int data, int index, int pos);
 void		print_list(t_node **a);
+t_node		*find_max_node(t_node **head);
+t_node		*find_min_node(t_node **head);
 
 //operations
 void		sa(t_node *a, int flag);
@@ -53,5 +60,25 @@ void		rr(t_node **a, t_node **b, int flag);
 void		rra(t_node **a, int flag);
 void		rrb(t_node **b, int flag);
 void		rrr(t_node **a, t_node **b, int flag);
+
+//sorting
+int			check_sort(t_node **head);
+void		count_move(t_move *move, int size, int index);
+void		sort_int_arr(int *tab, int size);
+void		list_sort(t_node *a, t_node *b, int size);
+void		sort_2(t_node *a);
+void		sort_3(t_node *a);
+
+
+
+
+void		reset_i(t_node **head);
+
+/*
+/usr/bin/python3 python_visualizer.py `ruby -e "puts (0..100).to_a.shuffle.join(' ')"`
+*/
+/*
+echo `ruby -e "puts (1..500).to_a.shuffle.join(' ')"` > sequence; ./push_swap $(cat sequence) | ./checker_Mac $(cat sequence)
+*/
 
 #endif
