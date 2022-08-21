@@ -6,7 +6,7 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 23:19:46 by aderugo           #+#    #+#             */
-/*   Updated: 2022/07/31 04:30:04 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/08/21 17:50:16 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	print_list(t_node **a)
 {
 	t_node	*temp;
 
+	if (!a)
+		return ;
 	temp = *a;
 	while (temp != NULL)
 	{

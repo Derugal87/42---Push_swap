@@ -6,7 +6,7 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 14:55:44 by aderugo           #+#    #+#             */
-/*   Updated: 2022/08/12 18:42:43 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/08/21 19:11:42 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,12 +66,14 @@ int			check_sort(t_node **head);
 void		count_move(t_move *move, int size, int index);
 void		sort_int_arr(int *tab, int size);
 void		list_sort(t_node *a, t_node *b, int size);
-void		sort_2(t_node *a);
-void		sort_3(t_node *a);
+void		sort_2(t_node **a);
+void		sort_3(t_node **a);
+void		sort_4(t_node **a, t_node **b, t_move *move);
+void		sort_5(t_node **a, t_node **b, t_move *move);
+void		move_to_top(t_move *move, t_node **head);
 
 
-
-
+void		init_struct(t_move *move);
 void		reset_i(t_node **head);
 
 /*

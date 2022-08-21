@@ -6,7 +6,7 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 17:00:16 by aderugo           #+#    #+#             */
-/*   Updated: 2022/08/11 22:25:09 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/08/21 19:52:41 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,9 @@ char	**get_final_argv(int argc, char **argv)
 	i = 1;
 	str = NULL;
 	arr = NULL;
-	if (argc == 2)
+	if (argc == 2 && ft_strlen(argv[1]) == 0)
+		exit(1);
+	else if (argc == 2)
 		arr = ft_split(argv[i], ' ');
 	else 
 	{
@@ -47,10 +49,7 @@ char	**get_final_argv(int argc, char **argv)
 		arr = ft_split(str, ' ');
 	}
 	if (!arr)
-	{
-		perror("mistake");
 		exit(1);
-	}
 	return (arr);
 }
 

@@ -6,7 +6,7 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 18:45:07 by aderugo           #+#    #+#             */
-/*   Updated: 2022/08/12 18:41:23 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/08/21 19:53:22 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int	main(int argc, char **argv)
 {
 	t_node	*a;
 	t_node	*b;
-	//t_node	*max_min;
 	int		*arr;
 	int		i;
 	int		size;
@@ -55,17 +54,6 @@ int	main(int argc, char **argv)
 	check_dubl(arr, size);
 	sort_int_arr(arr, size);
 	set_pos(&a, arr, size);
-	print_list(&a);
 	list_sort(a, b, size);
-	// max_min = find_min_node(&a);
-	// ft_printf("%d", max_min->data);
-	// sa(a, 1);
-	// rra(&a, 1);
-	// reset_i(&a);
-	// printf("\n");
-	//print_list(&a);
-	// printf("\n");
-	// reset_i(&b);
-	// print_list(&b);
 	return (0);
 }
