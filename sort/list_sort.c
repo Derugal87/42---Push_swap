@@ -6,7 +6,7 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 17:56:33 by aderugo           #+#    #+#             */
-/*   Updated: 2022/08/21 19:54:06 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/08/22 09:08:48 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,8 @@ void		list_sort(t_node *a, t_node *b, int size)
 		sort_4(&a, &b, move);
 	else if (size == 5)
 		sort_5(&a, &b, move);
-	// else if (size < 100)
-	// 	sort_100(&a, &b, move);
 	else
-	{
-		ft_printf("hello");
-	}
+	 	sort_more(&a, &b, move);
 }
 
 void init_struct(t_move *move)

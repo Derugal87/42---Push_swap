@@ -6,7 +6,7 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 22:30:49 by aderugo           #+#    #+#             */
-/*   Updated: 2022/08/12 15:40:48 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/08/22 01:28:50 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,16 @@ t_node	*find_max_node(t_node **head)
 	flag = 0;
 	while (temp->next != NULL)
 	{
-		if (temp->data > temp->next->data && !flag)
+		if (temp->data > temp->next->data && (flag == 0))
 		{
 			max_node = temp;
 			flag = 1;
 		}
-		else if ((temp->data > temp->next->data) && flag && (max_node->data < temp->data))
+		else if ((temp->data > temp->next->data) && (flag == 1) && (max_node->data < temp->data))
 			max_node = temp;
 		temp = temp->next;
 	}
-	if ((temp->next == NULL) && (max_node->data < temp->data))
+	if ((*head)->data < temp->data)
 		max_node = temp;
 	return (max_node);
 }
@@ -50,16 +50,16 @@ t_node	*find_min_node(t_node **head)
 	flag = 0;
 	while (temp->next != NULL)
 	{
-		if (temp->data < temp->next->data && !flag)
+		if (temp->data < temp->next->data && (flag == 0))
 		{
 			min_node = temp;
 			flag = 1;
 		}
-		else if ((temp->data < temp->next->data) && flag && (min_node->data > temp->data))
+		else if ((temp->data < temp->next->data) && (flag == 1) && (min_node->data > temp->data))
 			min_node = temp;
 		temp = temp->next;
 	}
-	if ((temp->next == NULL) && (min_node->data > temp->data))
+	if ((*head)->data > temp->data)
 		min_node = temp;
 	return (min_node);
 }
