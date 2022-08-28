@@ -6,7 +6,7 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 18:45:07 by aderugo           #+#    #+#             */
-/*   Updated: 2022/08/21 19:53:22 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/08/26 18:53:18 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	main(int argc, char **argv)
 	arr = malloc(size * sizeof(int));
 	i = -1;
 	while (++i < size)
-		arr[i] = ft_atoi(final_argv[i]);
+		arr[i] = ft_atoi_ps(final_argv[i]);
 	i = size - 1;
 	while (i >= 0)
 		push(&a, arr[i--], 0, 0);

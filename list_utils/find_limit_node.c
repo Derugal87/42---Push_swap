@@ -6,60 +6,40 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 22:30:49 by aderugo           #+#    #+#             */
-/*   Updated: 2022/08/22 01:28:50 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/08/26 20:12:14 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_node	*find_max_node(t_node **head)
+int	find_max_node(t_node **head)
 {
-	t_node	*temp;
-	t_node	*max_node;
-	int		flag;
+	int		max_node;
+	t_node	*current;
 
-	if (!head)
-		return (NULL);
-	temp = *head;
-	flag = 0;
-	while (temp->next != NULL)
+	max_node = (*head)->data;
+	current = *head;
+	while (current != NULL)
 	{
-		if (temp->data > temp->next->data && (flag == 0))
-		{
-			max_node = temp;
-			flag = 1;
-		}
-		else if ((temp->data > temp->next->data) && (flag == 1) && (max_node->data < temp->data))
-			max_node = temp;
-		temp = temp->next;
-	}
-	if ((*head)->data < temp->data)
-		max_node = temp;
+		if (max_node < current->data)
+			max_node = current->data;
+		current = current->next;
+	}	
 	return (max_node);
 }
 
-t_node	*find_min_node(t_node **head)
+int	find_min_node(t_node **head)
 {
-	t_node	*temp;
-	t_node	*min_node;
-	int		flag;
+	int		min_node;
+	t_node	*current;
 
-	if (!head)
-		return (NULL);
-	temp = *head;
-	flag = 0;
-	while (temp->next != NULL)
+	min_node = (*head)->data;
+	current = *head;
+	while (current != NULL)
 	{
-		if (temp->data < temp->next->data && (flag == 0))
-		{
-			min_node = temp;
-			flag = 1;
-		}
-		else if ((temp->data < temp->next->data) && (flag == 1) && (min_node->data > temp->data))
-			min_node = temp;
-		temp = temp->next;
-	}
-	if ((*head)->data > temp->data)
-		min_node = temp;
+		if (min_node > current->data)
+			min_node = current->data;
+		current = current->next;
+	}	
 	return (min_node);
 }

@@ -6,113 +6,72 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 23:11:03 by aderugo           #+#    #+#             */
-/*   Updated: 2022/08/22 10:14:40 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/08/28 07:12:54 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void		sort_more(t_node **a, t_node **b, t_move *move)
+void		sort_more(t_node **a, t_node **b, t_move *move, int chunk)
 {
 	t_node	*temp_a;
-	//t_node	*temp_b;
-	int	size;
-	int	chunk;
-	int	i;
-
+	t_node	*start_a;
+	t_node	*temp_b;
+	int	size_a;
+	int size_b;
+	
 	temp_a = *a;
-	i = 0;
-	print_list(a);
-	ft_printf("\n");
-	size = ft_lstsize_ps(&temp_a);
-	chunk = size / 20;
-	if (chunk == 0)
-	{
-		while ((*a)->next != NULL)
-		{
-			move_to_top_a(move, a);
-			reset_i(a);
-			pb(a, b);
-			ft_printf("\n");
-			print_list(a);
-			ft_printf("\n");
-			print_list(b);
-			(*a) = (*a)->next;
-		}
-	}
+	start_a = *a;
 	//print_list(a);
-	
-	
-	
-
-	
-	// t_node	*temp_a;
-	// t_node	*temp_b;
-	// t_node	*max;
-	
-	// // i - number of chunks
-	// int	i;
-	
-	// // k - max number of chunk
-	// int k;
-
-	// // n - position number
-	// int n;
-
-	// // m - chunk border;
-	// int m;
-	
-	// temp_a = *a;
-	// temp_b = *b;
-	// i = 1;
-	// k = 0;
-	// n = 1;
-	// m = 5;
-	// max = *a;
-	// max = find_max_node(&max);
-
-	// if ((max->index % 5) == 0)
-	// 	k = max->index / 5;
-	// else
-	// 	k = (max->index / 5) + 1;
-	// while (i < k)
-	// {
-	// 	while ((*a)->next != NULL)
-	// 	{
-	// 		if ((*a)->pos <= m)
-	// 		{
-	// 			move_to_top_a_cur(move, *a);
-	// 			pb(a, b);
-	// 			reset_i(a);
-	// 			// if (ft_lstsize_ps(b) != 1)
-	// 			// 	move_to_top_b(move, b);
-	// 			print_list(a);
-	// 			ft_printf("\n");
-	// 			print_list(b);
-	// 			ft_printf("\n");
-	// 		}
-	// 		else
-	// 			*a = (*a)->next;
-	// 	}
-	// 	(*a)->next = temp_a;
-	// 	m += 5;
-	// 	i++;
-	// }
-	
-	// if (ft_lstsize_ps(a) == 5)
-	// 	sort_5(a, b, move);
-	// else if (ft_lstsize_ps(a) == 4)
-	// 	sort_4(a, b, move);
-	// else if (ft_lstsize_ps(a) == 3)
-	// 	sort_3(a);
-	// else if (ft_lstsize_ps(a) == 2)
-	// 	sort_2(a);
-	// while (temp_b->next != NULL)
-	// {
-	// 	move_to_top_b(move, b);
-	// 	pa(a, b);
-	// 	temp_b = temp_b->next;
-	// }
-
-	
+	size_a = ft_lstsize_ps(&temp_a);
+	//ft_printf("size_a %d\n", size_a);
+	while (size_a > 1)
+	{
+		// if ((*a)->pos > (*a)->next->pos)
+		// 	sa(*a, 1);
+		while (start_a != NULL)
+		{
+			if (start_a->pos < (chunk - 10))
+			{
+				//ft_printf("pos a %d\n", start_a->pos);
+				reset_i(a);
+				move_to_top_cur(move, a, start_a->pos);
+				pb(a, b);
+				rb(b, 1);
+				size_a--;
+				//ft_printf("size %d\n", size_a);
+			}
+			else if ((start_a->pos >= (chunk - 10) && (start_a->pos <= chunk)))
+			{
+				//ft_printf("pos a %d\n", start_a->pos);
+				reset_i(a);
+				move_to_top_cur(move, a,start_a->pos);
+				pb(a, b);
+				size_a--;
+				//ft_printf("size %d\n", size_a);
+			}
+			start_a = start_a->next;
+			//print_list(b);
+			//ft_printf("\n");
+			if (size_a == 1)
+				break ;
+		}
+		//ft_printf("%d\n", size_a);
+		start_a = *a;
+		//start_a->next = *a;
+		chunk += 20;
+	}
+	// reset_i(b);
+	temp_b = *b;
+	// sort_3(a);
+	size_b = ft_lstsize_ps(&temp_b);
+	while (size_b > 0)
+	{
+		reset_i(b);
+		move_to_top_max(move, b);
+		pa(a, b);
+		size_b--;
+	}
+	reset_i(a);
+	//print_list(a);
 }

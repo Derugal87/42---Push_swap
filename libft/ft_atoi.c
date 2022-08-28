@@ -6,7 +6,7 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/25 10:52:35 by aderugo           #+#    #+#             */
-/*   Updated: 2022/02/02 18:13:11 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/08/26 14:15:53 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,6 @@ int	ft_atoi(const char *str)
 		return (-1);
 	else
 		result *= flag;
+	
 	return (result);
 }

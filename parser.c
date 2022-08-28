@@ -6,7 +6,7 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 17:00:16 by aderugo           #+#    #+#             */
-/*   Updated: 2022/08/21 19:52:41 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/08/26 18:54:47 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int		get_final_size(char **final_argv)
 	return (i);
 }
 
-
 char	**get_final_argv(int argc, char **argv)
 {
 	int i;
@@ -36,6 +35,11 @@ char	**get_final_argv(int argc, char **argv)
 	arr = NULL;
 	if (argc == 2 && ft_strlen(argv[1]) == 0)
 		exit(1);
+	if (argc == 2 && (ft_isdigit(argv[1][0]) == 0))
+	{
+		ft_printf("Error\n");
+		exit(1);
+	}
 	else if (argc == 2)
 		arr = ft_split(argv[i], ' ');
 	else 
@@ -83,7 +87,7 @@ void	check_param(char **argv)
 				}	
 				else
 				{
-					ft_printf("Wrong parameter\n");
+					ft_printf("Error\n");
 					exit(1);
 				}
 			}
@@ -104,7 +108,7 @@ void	check_dubl(int *arr, int size)
 		{
 			if (arr[i] == arr[j])
 			{
-				ft_printf("dublicate error\n");
+				ft_printf("Error\n");
 				exit(1);
 			}
 			j++;

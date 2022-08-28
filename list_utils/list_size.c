@@ -6,7 +6,7 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 16:35:07 by aderugo           #+#    #+#             */
-/*   Updated: 2022/07/31 04:29:52 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/08/27 20:41:09 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 int	ft_lstsize_ps(t_node **head)
 {
-	int	i;
+	int	size;
+	t_node *current;
 
-	i = 1;
-	if (*head == NULL)
-		return (0);
-	while ((*head)->next)
+	size = 0;
+	current = *head;
+	while (current)
 	{
-		i++;
-		(*head) = (*head)->next;
+		current = current->next;
+		size++;
 	}
-	return (i);
+	return (size);
 }

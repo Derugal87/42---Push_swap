@@ -6,7 +6,7 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 14:55:44 by aderugo           #+#    #+#             */
-/*   Updated: 2022/08/22 01:55:12 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/08/28 07:25:38 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "./libft/libft.h"
 # include "errno.h"
 # include <stdio.h>
+# include <limits.h>
 
 typedef struct s_node {
 	int				data;
@@ -45,8 +46,10 @@ t_node		*ft_lstprelast_ps(t_node *lst);
 int			ft_lstsize_ps(t_node **head);
 void		push(t_node **head, int data, int index, int pos);
 void		print_list(t_node **a);
-t_node		*find_max_node(t_node **head);
-t_node		*find_min_node(t_node **head);
+//t_node		*find_max_node(t_node **head);
+//t_node		*find_min_node(t_node **head);
+int			find_max_node(t_node **head);
+int			find_min_node(t_node **head);
 
 //operations
 void		sa(t_node *a, int flag);
@@ -70,15 +73,19 @@ void		sort_2(t_node **a);
 void		sort_3(t_node **a);
 void		sort_4(t_node **a, t_node **b, t_move *move);
 void		sort_5(t_node **a, t_node **b, t_move *move);
-void		sort_more(t_node **a, t_node **b, t_move *move);
-void		move_to_top_a(t_move *move, t_node **head);
-void		move_to_top_b(t_move *move, t_node **head);
-void		move_to_top_a_cur(t_move *move, t_node *head);
-void		move_to_top_b_cur(t_move *move, t_node *head);
+void		sort_less_23(t_node **a, t_node **b, t_move *move);
+void		sort_more(t_node **a, t_node **b, t_move *move, int chunk);
+void		move_to_top_min(t_move *move, t_node **head);
+void		move_to_top_max(t_move *move, t_node **head);
+void		move_to_top_cur(t_move *move, t_node **head, int pos);
+
 
 
 void		init_struct(t_move *move);
 void		reset_i(t_node **head);
+
+int			ft_atoi_ps(const char *str);
+void		radix_sort(t_node **stack_a, t_node **stack_b);
 
 /*
 /usr/bin/python3 python_visualizer.py `ruby -e "puts (0..100).to_a.shuffle.join(' ')"`
