@@ -6,7 +6,7 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 23:19:46 by aderugo           #+#    #+#             */
-/*   Updated: 2022/08/21 17:50:16 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/08/28 08:41:31 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ void	print_list(t_node **a)
 	temp = *a;
 	while (temp != NULL)
 	{
-		ft_printf("d: %d, i: %d, p: %d\n", temp->data, temp->index, temp->pos);
+		//ft_printf("d: %d, i: %d, p: %d\n", temp->data, temp->index, temp->pos);
+		ft_printf("%d ", temp->data);
 		temp = temp->next;
 	}
 }

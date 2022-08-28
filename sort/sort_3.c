@@ -6,7 +6,7 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 18:13:19 by aderugo           #+#    #+#             */
-/*   Updated: 2022/08/21 17:13:01 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/08/28 08:57:06 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,4 @@ void	sort_3(t_node **a)
 	else if ((x < y) && (x > z) && (y > z))
 		rra(a, 1);
 	reset_i(a);
-	//print_list(a);
 }

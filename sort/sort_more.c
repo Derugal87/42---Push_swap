@@ -6,7 +6,7 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 23:11:03 by aderugo           #+#    #+#             */
-/*   Updated: 2022/08/28 07:12:54 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/08/28 09:00:24 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void		sort_more(t_node **a, t_node **b, t_move *move, int chunk)
 	//print_list(a);
 	size_a = ft_lstsize_ps(&temp_a);
 	//ft_printf("size_a %d\n", size_a);
-	while (size_a > 1)
+	while (size_a > 0)
 	{
 		// if ((*a)->pos > (*a)->next->pos)
 		// 	sa(*a, 1);
@@ -53,7 +53,7 @@ void		sort_more(t_node **a, t_node **b, t_move *move, int chunk)
 			start_a = start_a->next;
 			//print_list(b);
 			//ft_printf("\n");
-			if (size_a == 1)
+			if (size_a == 0)
 				break ;
 		}
 		//ft_printf("%d\n", size_a);
@@ -73,5 +73,5 @@ void		sort_more(t_node **a, t_node **b, t_move *move, int chunk)
 		size_b--;
 	}
 	reset_i(a);
-	//print_list(a);
+	// print_list(a);
 }

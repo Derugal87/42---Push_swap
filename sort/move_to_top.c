@@ -6,7 +6,7 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 17:08:56 by aderugo           #+#    #+#             */
-/*   Updated: 2022/08/28 05:52:50 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/08/28 08:53:58 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,9 @@ void	move_to_top_max(t_move *move, t_node **head)
 	while (move->step != 0)
 	{
 		if (move->route == 1)
-			ra(head, 1);
+			rb(head, 1);
 		else
-			rra(head, 1);
+			rrb(head, 1);
 		move->step--;
 	}
 }

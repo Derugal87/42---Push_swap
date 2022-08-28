@@ -6,7 +6,7 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 19:54:14 by aderugo           #+#    #+#             */
-/*   Updated: 2022/08/28 05:54:10 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/08/28 08:39:58 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,5 @@ void	sort_4(t_node **a, t_node **b, t_move *move)
 	sort_3(a);
 	pa(a, b);
 	reset_i(a);
+	//print_list(a);
 }
