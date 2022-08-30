@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_2.c                                           :+:      :+:    :+:   */
+/*   reset_index.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/12 18:03:43 by aderugo           #+#    #+#             */
-/*   Updated: 2022/08/29 18:59:20 by aderugo          ###   ########.fr       */
+/*   Created: 2022/08/29 22:15:33 by aderugo           #+#    #+#             */
+/*   Updated: 2022/08/29 22:16:16 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	sort_2(t_node **a)
+void	reset_i(t_node **head)
 {
-	if ((*a)->data > (*a)->next->data)
-		sa(*a, 1);
+	t_node	*temp;
+	int		i;
+
+	temp = *head;
+	i = 1;
+	while (temp != NULL)
+	{
+		temp->index = i;
+		i++;
+		temp = temp->next;
+	}
 }

@@ -6,24 +6,22 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 17:56:33 by aderugo           #+#    #+#             */
-/*   Updated: 2022/08/28 07:25:25 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/08/30 13:36:12 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void		list_sort(t_node *a, t_node *b, int size)
+void	list_sort(t_node *a, t_node *b, int size)
 {
-	t_move *move;
-	int		chunk;
-	
-	chunk = 10;
+	t_move	*move;
+
+	move = NULL;
 	if (check_sort(&a) == 0)
 		exit(1);
 	move = malloc(sizeof(t_move));
 	if (!move)
 		return ;
-	//init_struct(move);
 	b = NULL;
 	if (size == 2)
 		sort_2(&a);
@@ -36,11 +34,6 @@ void		list_sort(t_node *a, t_node *b, int size)
 	else if (size < 23)
 		sort_less_23(&a, &b, move);
 	else
-		sort_more(&a, &b, move, chunk);
+		sort_more(&a, &b, move);
+	
 }
-
-// void init_struct(t_move *move)
-// {
-// 	move->step = 0;
-// 	move->route = 0;
-// }

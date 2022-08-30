@@ -6,72 +6,60 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 23:11:03 by aderugo           #+#    #+#             */
-/*   Updated: 2022/08/28 09:00:24 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/08/30 02:18:00 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void		sort_more(t_node **a, t_node **b, t_move *move, int chunk)
+int	chunk_count(int size_a)
 {
-	t_node	*temp_a;
-	t_node	*start_a;
-	t_node	*temp_b;
-	int	size_a;
-	int size_b;
-	
-	temp_a = *a;
-	start_a = *a;
-	//print_list(a);
-	size_a = ft_lstsize_ps(&temp_a);
-	//ft_printf("size_a %d\n", size_a);
-	while (size_a > 0)
-	{
-		// if ((*a)->pos > (*a)->next->pos)
-		// 	sa(*a, 1);
-		while (start_a != NULL)
-		{
-			if (start_a->pos < (chunk - 10))
-			{
-				//ft_printf("pos a %d\n", start_a->pos);
-				reset_i(a);
-				move_to_top_cur(move, a, start_a->pos);
-				pb(a, b);
-				rb(b, 1);
-				size_a--;
-				//ft_printf("size %d\n", size_a);
-			}
-			else if ((start_a->pos >= (chunk - 10) && (start_a->pos <= chunk)))
-			{
-				//ft_printf("pos a %d\n", start_a->pos);
-				reset_i(a);
-				move_to_top_cur(move, a,start_a->pos);
-				pb(a, b);
-				size_a--;
-				//ft_printf("size %d\n", size_a);
-			}
-			start_a = start_a->next;
-			//print_list(b);
-			//ft_printf("\n");
-			if (size_a == 0)
-				break ;
-		}
-		//ft_printf("%d\n", size_a);
-		start_a = *a;
-		//start_a->next = *a;
-		chunk += 20;
-	}
-	// reset_i(b);
-	temp_b = *b;
-	// sort_3(a);
-	size_b = ft_lstsize_ps(&temp_b);
+	if (size_a <= 250)
+		return (30);
+	else
+		return (50);
+}
+
+void	push_back(t_node **a, t_node **b)
+{
+	int		size_b;
+	t_move	move;
+
+	size_b = ft_lstsize_ps(b);
 	while (size_b > 0)
 	{
 		reset_i(b);
-		move_to_top_max(move, b);
+		move_to_top_max(&move, b);
 		pa(a, b);
 		size_b--;
 	}
-	reset_i(a);
-	// print_list(a);
+}
+
+void	sort_more(t_node **a, t_node **b, t_move *move)
+{
+	t_node	*start_a;
+	int		temp;
+	int		chunk;
+
+	start_a = *a;
+	chunk = chunk_count(ft_lstsize_ps(a));
+	temp = chunk;
+	while (ft_lstsize_ps(a) > 0)
+	{
+		while (start_a != NULL)
+		{
+			if (start_a->pos <= chunk)
+			{
+				move_to_top_cur(move, a, b, start_a->pos);
+				if (start_a->pos < (chunk - (temp / 2)))
+					rb(b, 1);
+			}
+			start_a = start_a->next;
+			if (ft_lstsize_ps(a) == 0)
+				break ;
+		}
+		start_a = *a;
+		chunk += temp;
+	}
+	push_back(a, b);
 }

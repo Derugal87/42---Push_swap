@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_2.c                                           :+:      :+:    :+:   */
+/*   free_list.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/12 18:03:43 by aderugo           #+#    #+#             */
-/*   Updated: 2022/08/29 18:59:20 by aderugo          ###   ########.fr       */
+/*   Created: 2022/08/30 06:43:26 by aderugo           #+#    #+#             */
+/*   Updated: 2022/08/30 15:08:42 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	sort_2(t_node **a)
+void	free_list(t_node **head)
 {
-	if ((*a)->data > (*a)->next->data)
-		sa(*a, 1);
+	t_node	*temp;
+
+		printf("%d \n", (*head)->data);
+	if (*head == NULL)
+		return ;
+	temp = *head;
+	while (temp != NULL)
+	{
+		del_node(head);
+		temp = *head;
+	}
 }

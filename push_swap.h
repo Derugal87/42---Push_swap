@@ -6,7 +6,7 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 14:55:44 by aderugo           #+#    #+#             */
-/*   Updated: 2022/08/28 07:25:38 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/08/30 14:01:54 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,20 @@ typedef struct s_node {
 
 typedef struct s_move {
 	int	step;
-	int route;
+	int	route;
 }	t_move;
 
-//Functions
+//PS utility functions
 void		check_param(char **argv);
 void		sort_int_arr(int *tab, int size);
-void		check_dubl(int *arr, int argc);
+void		check_dubl(int *arr, int size);
 void		set_pos(t_node **head, int *arr, int size);
 char		**get_final_argv(int argc, char **argv);
 int			get_final_size(char **final_argv);
+int			ft_atoi_ps(const char *str);
+int			space_check(char *str);
+void		prepare_and_sort(t_node *a, t_node *b, char **final_argv, int size);
+char		**get_arr(int argc, char **argv);
 
 //list_utils
 void		del_node(t_node **head);
@@ -46,10 +50,10 @@ t_node		*ft_lstprelast_ps(t_node *lst);
 int			ft_lstsize_ps(t_node **head);
 void		push(t_node **head, int data, int index, int pos);
 void		print_list(t_node **a);
-//t_node		*find_max_node(t_node **head);
-//t_node		*find_min_node(t_node **head);
 int			find_max_node(t_node **head);
 int			find_min_node(t_node **head);
+void		reset_i(t_node **head);
+void		free_list(t_node **head);
 
 //operations
 void		sa(t_node *a, int flag);
@@ -74,24 +78,16 @@ void		sort_3(t_node **a);
 void		sort_4(t_node **a, t_node **b, t_move *move);
 void		sort_5(t_node **a, t_node **b, t_move *move);
 void		sort_less_23(t_node **a, t_node **b, t_move *move);
-void		sort_more(t_node **a, t_node **b, t_move *move, int chunk);
+void		sort_more(t_node **a, t_node **b, t_move *move);
 void		move_to_top_min(t_move *move, t_node **head);
 void		move_to_top_max(t_move *move, t_node **head);
-void		move_to_top_cur(t_move *move, t_node **head, int pos);
+void		move_to_top_cur(t_move *move, t_node **a, t_node **b, int pos);
 
-
-
-void		init_struct(t_move *move);
-void		reset_i(t_node **head);
-
-int			ft_atoi_ps(const char *str);
-void		radix_sort(t_node **stack_a, t_node **stack_b);
-
-/*
-/usr/bin/python3 python_visualizer.py `ruby -e "puts (0..100).to_a.shuffle.join(' ')"`
-*/
-/*
-echo `ruby -e "puts (1..500).to_a.shuffle.join(' ')"` > sequence; ./push_swap $(cat sequence) | ./checker_Mac $(cat sequence)
-*/
+//error & free handling
+void		error_1();
+void		error_2();
+void		free_1(char **arr);
+void		free_2(char **arr);
+void		free_all_lists(t_node **a, t_node **b);
 
 #endif

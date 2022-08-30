@@ -1,19 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_2.c                                           :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/12 18:03:43 by aderugo           #+#    #+#             */
-/*   Updated: 2022/08/29 18:59:20 by aderugo          ###   ########.fr       */
+/*   Created: 2022/08/30 06:01:25 by aderugo           #+#    #+#             */
+/*   Updated: 2022/08/30 14:01:00 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	sort_2(t_node **a)
+void	free_1(char **arr)
 {
-	if ((*a)->data > (*a)->next->data)
-		sa(*a, 1);
+	while (*arr != NULL)
+	{
+		free(*arr);
+		arr++;
+	}
+	free(arr);
+	exit(1);
+}
+
+void	free_2(char **arr)
+{
+	while (*arr != NULL)
+	{
+		free(*arr);
+		arr++;
+	}
+	free(arr);
+}
+
+void	free_all_lists(t_node **a, t_node **b)
+{
+	free_list(a);
+	free_list(b);
 }

@@ -6,7 +6,7 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 18:13:19 by aderugo           #+#    #+#             */
-/*   Updated: 2022/08/28 08:57:06 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/08/30 05:43:00 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,13 @@
 
 void	sort_3(t_node **a)
 {
-	int x;
-	int y;
-	int z;
+	int	x;
+	int	y;
+	int	z;
 
 	x = (*a)->data;
 	y = (*a)->next->data;
 	z = (*a)->next->next->data;
-	
 	if ((x > y) && (x < z) && (y < z))
 		sa(*a, 1);
 	else if ((x > y) && (y > z))
@@ -38,5 +37,4 @@ void	sort_3(t_node **a)
 	}
 	else if ((x < y) && (x > z) && (y > z))
 		rra(a, 1);
-	reset_i(a);
 }
