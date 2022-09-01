@@ -6,7 +6,7 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 17:56:33 by aderugo           #+#    #+#             */
-/*   Updated: 2022/08/30 13:36:12 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/09/01 04:25:38 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,4 @@ void	list_sort(t_node *a, t_node *b, int size)
 		sort_less_23(&a, &b, move);
 	else
 		sort_more(&a, &b, move);
-	
 }

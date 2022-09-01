@@ -6,7 +6,7 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 06:43:26 by aderugo           #+#    #+#             */
-/*   Updated: 2022/08/30 15:08:42 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/09/01 05:21:29 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	free_list(t_node **head)
 {
 	t_node	*temp;
 
-		printf("%d \n", (*head)->data);
 	if (*head == NULL)
 		return ;
 	temp = *head;

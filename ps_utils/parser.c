@@ -6,7 +6,7 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 17:00:16 by aderugo           #+#    #+#             */
-/*   Updated: 2022/08/30 13:42:28 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/09/01 05:24:26 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ char	**get_arr(int argc, char **argv)
 			i++;
 		}
 		arr = ft_split(str, ' ');
-		free(str);
+		//free(str);
 	}
 	if (!arr)
 		exit(1);

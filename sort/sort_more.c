@@ -6,7 +6,7 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 23:11:03 by aderugo           #+#    #+#             */
-/*   Updated: 2022/08/30 02:18:00 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/09/01 05:19:34 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,22 +40,27 @@ void	sort_more(t_node **a, t_node **b, t_move *move)
 	t_node	*start_a;
 	int		temp;
 	int		chunk;
+	int		size;
 
 	start_a = *a;
 	chunk = chunk_count(ft_lstsize_ps(a));
 	temp = chunk;
-	while (ft_lstsize_ps(a) > 0)
+	size = ft_lstsize_ps(a);
+	while (size > 0)
 	{
 		while (start_a != NULL)
 		{
 			if (start_a->pos <= chunk)
 			{
-				move_to_top_cur(move, a, b, start_a->pos);
+				reset_i(a);
+				move_to_top_cur(move, a, start_a->pos);
+				pb(a, b);
 				if (start_a->pos < (chunk - (temp / 2)))
 					rb(b, 1);
+				size--;
 			}
 			start_a = start_a->next;
-			if (ft_lstsize_ps(a) == 0)
+			if (size == 0)
 				break ;
 		}
 		start_a = *a;

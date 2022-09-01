@@ -6,7 +6,7 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 14:55:44 by aderugo           #+#    #+#             */
-/*   Updated: 2022/08/30 14:01:54 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/09/01 05:13:56 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void		sort_less_23(t_node **a, t_node **b, t_move *move);
 void		sort_more(t_node **a, t_node **b, t_move *move);
 void		move_to_top_min(t_move *move, t_node **head);
 void		move_to_top_max(t_move *move, t_node **head);
-void		move_to_top_cur(t_move *move, t_node **a, t_node **b, int pos);
+void		move_to_top_cur(t_move *move, t_node **a, int pos);
 
 //error & free handling
 void		error_1();

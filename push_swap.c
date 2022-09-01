@@ -6,7 +6,7 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 18:45:07 by aderugo           #+#    #+#             */
-/*   Updated: 2022/08/30 14:05:00 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/08/31 19:36:47 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	prepare_and_sort(t_node *a, t_node *b, char **final_argv, int size)
 	check_dubl(arr, size);
 	sort_int_arr(arr, size);
 	set_pos(&a, arr, size);
-	free(arr);
+	//free(arr);
 	// free_2(final_argv);
 	list_sort(a, b, size);
 }
@@ -46,6 +46,6 @@ int	main(int argc, char **argv)
 	final_argv = get_final_argv(argc, argv);
 	size = get_final_size(final_argv);
 	prepare_and_sort(a, b, final_argv, size);
-	free_all_lists(&a, &b);
+	//free_all_lists(&a, &b);
 	return (0);
 }
