@@ -6,21 +6,20 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 19:15:22 by aderugo           #+#    #+#             */
-/*   Updated: 2022/08/30 08:13:19 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/09/01 05:31:21 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	error_1()
+void	error_1(void)
 {
 	ft_printf("Error\n");
 	exit(1);
 }
 
-void	error_2()
+void	error_2(void)
 {
 	ft_printf("Error\n");
-	//free_2(arr);
 	exit(1);
 }

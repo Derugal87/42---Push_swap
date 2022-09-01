@@ -6,7 +6,7 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 19:15:07 by aderugo           #+#    #+#             */
-/*   Updated: 2022/09/01 05:22:28 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/09/01 05:32:06 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,4 @@ void	push(t_node **head, int data, int index, int pos)
 	temp->pos = pos;
 	temp->next = (*head);
 	*head = temp;
-	//free(temp);
 }

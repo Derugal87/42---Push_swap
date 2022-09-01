@@ -6,7 +6,7 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 14:55:44 by aderugo           #+#    #+#             */
-/*   Updated: 2022/09/01 05:13:56 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/09/01 06:46:25 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,16 +78,16 @@ void		sort_3(t_node **a);
 void		sort_4(t_node **a, t_node **b, t_move *move);
 void		sort_5(t_node **a, t_node **b, t_move *move);
 void		sort_less_23(t_node **a, t_node **b, t_move *move);
-void		sort_more(t_node **a, t_node **b, t_move *move);
+void		sort_more(t_node **a, t_node **b, t_move *move, int *arr);
 void		move_to_top_min(t_move *move, t_node **head);
 void		move_to_top_max(t_move *move, t_node **head);
-void		move_to_top_cur(t_move *move, t_node **a, int pos);
+void		move_to_top_cur(t_move *move, t_node **a, t_node **b, int pos);
 
 //error & free handling
-void		error_1();
-void		error_2();
-void		free_1(char **arr);
-void		free_2(char **arr);
+void		error_1(void);
+void		error_2(void);
+void		free_1(void);
+void		free_2(void);
 void		free_all_lists(t_node **a, t_node **b);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 17:08:56 by aderugo           #+#    #+#             */
-/*   Updated: 2022/09/01 05:16:18 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/09/01 05:43:25 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,12 +83,13 @@ void	move_to_top_max(t_move *move, t_node **head)
 	}
 }
 
-void	move_to_top_cur(t_move *move, t_node **a, int pos)
+void	move_to_top_cur(t_move *move, t_node **a, t_node **b, int pos)
 {
 	int		len;
 	t_node	*current;
 	t_node	*temp;
 
+	reset_i(a);
 	temp = *a;
 	current = *a;
 	len = ft_lstsize_ps(&temp);
@@ -96,7 +97,10 @@ void	move_to_top_cur(t_move *move, t_node **a, int pos)
 		current = current->next;
 	count_move(move, len, current->index);
 	if (move->step == 0)
+	{
+		pb(a, b);
 		return ;
+	}
 	while (move->step != 0)
 	{
 		if (move->route == 1)
@@ -105,4 +109,5 @@ void	move_to_top_cur(t_move *move, t_node **a, int pos)
 			rra(a, 1);
 		move->step--;
 	}
+	pb(a, b);
 }
