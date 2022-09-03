@@ -6,7 +6,7 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 14:55:44 by aderugo           #+#    #+#             */
-/*   Updated: 2022/09/01 06:46:25 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/09/03 08:41:20 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef struct s_move {
 //PS utility functions
 void		check_param(char **argv);
 void		sort_int_arr(int *tab, int size);
-void		check_dubl(int *arr, int size);
+int			check_dubl(int *arr, int size);
 void		set_pos(t_node **head, int *arr, int size);
 char		**get_final_argv(int argc, char **argv);
 int			get_final_size(char **final_argv);
@@ -41,6 +41,7 @@ int			ft_atoi_ps(const char *str);
 int			space_check(char *str);
 void		prepare_and_sort(t_node *a, t_node *b, char **final_argv, int size);
 char		**get_arr(int argc, char **argv);
+void		dirty_check(int argc, char **argv);
 
 //list_utils
 void		del_node(t_node **head);
@@ -61,6 +62,7 @@ void		sb(t_node *b, int flag);
 void		ss(t_node *a, t_node *b, int flag);
 void		pa(t_node **a, t_node **b);
 void		pb(t_node **a, t_node **b);
+void		pb_sm(t_node **a, t_node **b);
 void		ra(t_node **a, int flag);
 void		rb(t_node **b, int flag);
 void		rr(t_node **a, t_node **b, int flag);
@@ -70,24 +72,26 @@ void		rrr(t_node **a, t_node **b, int flag);
 
 //sorting
 int			check_sort(t_node **head);
-void		count_move(t_move *move, int size, int index);
+int			count_move(t_move *move, int size, int index);
 void		sort_int_arr(int *tab, int size);
 void		list_sort(t_node *a, t_node *b, int size);
 void		sort_2(t_node **a);
 void		sort_3(t_node **a);
 void		sort_4(t_node **a, t_node **b, t_move *move);
 void		sort_5(t_node **a, t_node **b, t_move *move);
-void		sort_less_23(t_node **a, t_node **b, t_move *move);
 void		sort_more(t_node **a, t_node **b, t_move *move, int *arr);
+void		sort_more_1(t_node **a, t_node **b, t_move *move, int *arr);
 void		move_to_top_min(t_move *move, t_node **head);
 void		move_to_top_max(t_move *move, t_node **head);
-void		move_to_top_cur(t_move *move, t_node **a, t_node **b, int pos);
+void		move_to_top_cur(t_move *move, t_node **a, int pos);
 
 //error & free handling
-void		error_1(void);
-void		error_2(void);
-void		free_1(void);
-void		free_2(void);
-void		free_all_lists(t_node **a, t_node **b);
+void		error(void);
+
+void		free_1(char **arr);
+void		free_argv(char **argv);
+void		free_argv_exit(char **argv);
+void		free_final_argv(char **final_argv);
+void		free_arr(char **arr);
 
 #endif

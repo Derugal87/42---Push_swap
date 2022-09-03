@@ -6,7 +6,7 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 06:43:26 by aderugo           #+#    #+#             */
-/*   Updated: 2022/09/01 05:21:29 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/09/02 17:53:39 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 
 void	free_list(t_node **head)
 {
-	t_node	*temp;
+	t_node	*tmp;
 
-	if (*head == NULL)
-		return ;
-	temp = *head;
-	while (temp != NULL)
+	tmp = *head;
+	while (tmp != NULL)
 	{
 		del_node(head);
-		temp = *head;
+		tmp = *head;
 	}
 }

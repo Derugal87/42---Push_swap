@@ -11,7 +11,6 @@ C_FILES = push_swap.c\
 			 ps_utils/ft_atoi_ps.c\
 			 ps_utils/check_dublicates.c\
 			 sort/sort_more.c \
-			 sort/sort_less_23.c\
 			 sort/move_to_top.c\
 			 sort/sort_5.c\
 			 sort/sort_4.c\

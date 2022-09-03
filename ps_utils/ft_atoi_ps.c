@@ -6,7 +6,7 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 15:47:02 by aderugo           #+#    #+#             */
-/*   Updated: 2022/08/30 08:06:52 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/09/03 08:41:49 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ int	ft_atoi_ps(const char *str)
 		result += *str++ - '0';
 	}
 	if (ft_isdigit(*str) == 0 && *str)
-		error_1();
+		error();
 	if (result > INT_MAX && flag == 1)
-		error_1();
+		error();
 	if (((result - 1) > INT_MAX) && flag == -1)
-		error_1();
+		error();
 	result *= flag;
 	return (result);
 }

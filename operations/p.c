@@ -6,7 +6,7 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 15:23:43 by aderugo           #+#    #+#             */
-/*   Updated: 2022/08/21 19:14:36 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/09/03 08:44:22 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,20 @@ void	pb(t_node **a, t_node **b)
 		return ;
 	push(b, temp->data, 0, temp->pos);
 	del_node(a);
+	ft_printf("pb\n");
+}
+
+void	pb_sm(t_node **a, t_node **b)
+{
+	int		size;
+	t_node	*tmp;
+	t_node	*temp;
+
+	tmp = *a;
+	temp = *a;
+	size = ft_lstsize_ps(&tmp);
+	if (size == 0)
+		return ;
+	push(b, temp->data, 0, temp->pos);
 	ft_printf("pb\n");
 }

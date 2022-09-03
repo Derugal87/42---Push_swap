@@ -6,7 +6,7 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 17:00:16 by aderugo           #+#    #+#             */
-/*   Updated: 2022/09/01 05:33:01 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/09/03 08:47:08 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	space_check(char *str)
 
 	i = 0;
 	sym_num = 0;
-	while (str[i] != 0)
+	while (str[i] != '\0')
 	{
 		if (str[i] == ' ')
 			sym_num++;
@@ -59,15 +59,15 @@ char	**get_arr(int argc, char **argv)
 			i++;
 		}
 		arr = ft_split(str, ' ');
+		free(str);
 	}
-	if (!arr)
-		exit(1);
 	return (arr);
 }
 
 char	**get_final_argv(int argc, char **argv)
 {
 	int		i;
+	char	**result;
 
 	i = 1;
 	while (argv[i])
@@ -76,12 +76,16 @@ char	**get_final_argv(int argc, char **argv)
 			argv[i] = ft_strtrim(argv[i], " ");
 		i++;
 	}
-	if (argc == 2 && ft_strlen(argv[1]) == 0)
-		exit(1);
-	if (argc == 2 && (ft_isdigit(argv[1][0]) == 0) &&
-			argv[1][0] != '-' && argv[1][0] != '+')
-		error_2();
-	return (get_arr(argc, argv));
+	if (argc == 2)
+	{
+		if (ft_strlen(argv[1]) == 0)
+			exit(1);
+		if (ft_isdigit(argv[1][0]) == 0 &&
+				argv[1][0] != '-' && argv[1][0] != '+')
+			error();
+	}
+	result = get_arr(argc, argv);
+	return (result);
 }
 
 void	check_param(char **argv)
@@ -98,11 +102,14 @@ void	check_param(char **argv)
 			if (ft_isdigit(argv[i][k]) == 0)
 			{
 				if (argv[i][k] != '+' && argv[i][k] != '-' && argv[i][k] != ' ')
-					error_1();
-				if (argv[i][k + 1] != '\0' && (argv[i][k] == '+' ||
-						argv[i][k] == '-') && (argv[i][k + 1] == '+' ||
-							argv[i][k + 1] == '-'))
-					error_1();
+					error();
+				if (ft_strlen(argv[i]) == 1 && (argv[i][k] == '+'
+					|| argv[i][k] == '-'))
+					error();
+				if ((argv[i][k] == '+' || argv[i][k] == '-') &&
+						(argv[i][k + 1] == '\0' || argv[i][k + 1] == '+' ||
+							argv[i][k + 1] == '-' || argv[i][k + 1] == ' '))
+					error();
 			}
 		}
 	}

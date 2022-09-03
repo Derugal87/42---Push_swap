@@ -6,13 +6,13 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 17:35:58 by aderugo           #+#    #+#             */
-/*   Updated: 2022/08/29 19:01:29 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/09/01 07:34:18 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	count_move(t_move *move, int size, int index)
+int	count_move(t_move *move, int size, int index)
 {
 	int	top;
 	int	bottom;
@@ -28,5 +28,6 @@ void	count_move(t_move *move, int size, int index)
 	{
 		move->step = bottom;
 		move->route = 0;
-	}	
+	}
+	return (move->step);
 }
