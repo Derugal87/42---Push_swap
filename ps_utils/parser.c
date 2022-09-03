@@ -6,7 +6,7 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 17:00:16 by aderugo           #+#    #+#             */
-/*   Updated: 2022/09/03 08:47:08 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/09/03 10:28:42 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,6 @@ char	**get_final_argv(int argc, char **argv)
 	}
 	if (argc == 2)
 	{
-		if (ft_strlen(argv[1]) == 0)
-			exit(1);
 		if (ft_isdigit(argv[1][0]) == 0 &&
 				argv[1][0] != '-' && argv[1][0] != '+')
 			error();

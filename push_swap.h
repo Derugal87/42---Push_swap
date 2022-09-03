@@ -6,7 +6,7 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 14:55:44 by aderugo           #+#    #+#             */
-/*   Updated: 2022/09/03 08:41:20 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/09/03 11:14:19 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,11 +87,8 @@ void		move_to_top_cur(t_move *move, t_node **a, int pos);
 
 //error & free handling
 void		error(void);
-
-void		free_1(char **arr);
 void		free_argv(char **argv);
-void		free_argv_exit(char **argv);
 void		free_final_argv(char **final_argv);
-void		free_arr(char **arr);
+void		free_complex(int *arr, char **final_argv);
 
 #endif

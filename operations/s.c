@@ -6,7 +6,7 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 15:24:33 by aderugo           #+#    #+#             */
-/*   Updated: 2022/07/31 04:31:30 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/09/03 09:43:37 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,5 @@ void	ss(t_node *a, t_node *b, int flag)
 {
 	sa(a, flag);
 	sb(b, flag);
-	printf("ss\n");
+	ft_printf("ss\n");
 }
