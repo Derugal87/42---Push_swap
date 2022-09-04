@@ -6,7 +6,7 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 14:55:44 by aderugo           #+#    #+#             */
-/*   Updated: 2022/09/03 11:14:19 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/09/04 06:08:58 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int			check_dubl(int *arr, int size);
 void		set_pos(t_node **head, int *arr, int size);
 char		**get_final_argv(int argc, char **argv);
 int			get_final_size(char **final_argv);
-int			ft_atoi_ps(const char *str);
+int			ft_atoi_ps(char *str, char **final_argv, int *arr, int index);
 int			space_check(char *str);
 void		prepare_and_sort(t_node *a, t_node *b, char **final_argv, int size);
 char		**get_arr(int argc, char **argv);
@@ -87,8 +87,12 @@ void		move_to_top_cur(t_move *move, t_node **a, int pos);
 
 //error & free handling
 void		error(void);
+void		error_2(char *str, char **final_argv);
 void		free_argv(char **argv);
 void		free_final_argv(char **final_argv);
+void		free_final_argv_2(char **final_argv, int index);
 void		free_complex(int *arr, char **final_argv);
+void		free_complex_2(int *arr, char **final_argv, int index);
+void		free_error_complex(int *arr, char **final_argv, int index);
 
 #endif

@@ -6,13 +6,13 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 15:47:02 by aderugo           #+#    #+#             */
-/*   Updated: 2022/09/03 08:41:49 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/09/04 06:59:40 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	ft_atoi_ps(const char *str)
+int	ft_atoi_ps(char *str, char **final_argv, int *arr, int index)
 {
 	long	result;
 	int		flag;
@@ -34,9 +34,9 @@ int	ft_atoi_ps(const char *str)
 	if (ft_isdigit(*str) == 0 && *str)
 		error();
 	if (result > INT_MAX && flag == 1)
-		error();
+		free_error_complex(arr, final_argv, index);
 	if (((result - 1) > INT_MAX) && flag == -1)
-		error();
+		free_error_complex(arr, final_argv, index);
 	result *= flag;
 	return (result);
 }
