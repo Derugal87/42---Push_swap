@@ -6,7 +6,7 @@
 /*   By: aderugo <aderugo@42abudhabi.ae>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 15:47:02 by aderugo           #+#    #+#             */
-/*   Updated: 2022/09/04 06:59:40 by aderugo          ###   ########.fr       */
+/*   Updated: 2022/09/04 08:51:46 by aderugo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_atoi_ps(char *str, char **final_argv, int *arr, int index)
 		result += *str++ - '0';
 	}
 	if (ft_isdigit(*str) == 0 && *str)
-		error();
+		free_error_complex(arr, final_argv, index);
 	if (result > INT_MAX && flag == 1)
 		free_error_complex(arr, final_argv, index);
 	if (((result - 1) > INT_MAX) && flag == -1)
