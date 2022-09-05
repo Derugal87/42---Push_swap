@@ -3,7 +3,7 @@ ifndef VERPOSE
 endif
 
 NAME = push_swap
-CC = gcc -g3
+CC = gcc
 RM = rm -f
 CFLAGS	= -Wall -Wextra -Werror
 C_FILES = push_swap.c\
